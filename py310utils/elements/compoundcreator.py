@@ -32,8 +32,8 @@ Atoms: {str(atom_names).replace("[", "").replace("]", "").replace("'", "")}
 Atomic Mass: {atomic_mass_total}""")
 
     with open(f"{comp_name}.json", "w") as f:
-        f.write(json.dumps(f"""\x7b
+        f.write(f"""\x7b
     "comp_name": "{comp_name}",
     "atoms": "{atom_names}",
-    "atomic_mass": "{round(atomic_mass_total, 2)}"
-\x7d"""))
+    "atomic_mass": {round(atomic_mass_total, 2)}
+\x7d""")
